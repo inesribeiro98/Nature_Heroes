@@ -185,8 +185,8 @@
               <?php
               //Display na tabela dos projetos que satisfazem as condicoes
               $result =get_all_projects_manager($spot_yn, $pais,$nome_projeto,$sort);
-              
-              $row =  pg_fetch_assoc($result);
+
+              $row    = mysqli_fetch_assoc($result);
 
               while(isset($row['projeto_id']))
               {
@@ -204,7 +204,7 @@
                   echo "<td> <a href='list_volunteers_in_project.php?id_proj=".$row["projeto_id"]."'> View Applicants </a> <br> <a href='form_edit_project.php?id_proj=".$row["projeto_id"]."'> More info/Edit </a> </td>";
                 }
 
-                $row = pg_fetch_assoc($result);
+                $row    = mysqli_fetch_assoc($result);
               }
 
              ?>

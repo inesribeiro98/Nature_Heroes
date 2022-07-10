@@ -52,7 +52,7 @@
       }
       else {
         $result = get_volunteer_info($voluntario_id);
-        $row    = pg_fetch_assoc($result);
+        $row    = mysqli_fetch_assoc($result);
 
         $name            = $row["nome"];
         $email           = $row["email"];
@@ -124,7 +124,7 @@
             <h1> My next projects:</h1>
             <?php
             $result = projects_of_volunteer($voluntario_id);
-            $row    = pg_fetch_assoc($result);
+            $row    = mysqli_fetch_assoc($result);
 
             if (!isset($row["projeto_id"])){ //Não ha projetos
                 echo "<p class=\"aviso\" style=\"padding-left:50px;\"> No future projects. Check out our projects and choose your favourite! </p>";
@@ -153,13 +153,13 @@
                   <a href="../../Actions/Volunteer/action_cancel_application.php?id=<?php echo $row["projeto_id"];?>" class="button_vol" id="grande" onclick="aviso_cancelado()"> <span>  Cancel Application  </span> </a>
                 </div>
                   <?php
-                  $row = pg_fetch_assoc($result);
+                  $row    = mysqli_fetch_assoc($result);
                 }
             }
 
              //projetos passados//
             $result = past_projects($voluntario_id);
-            $row    = pg_fetch_assoc($result);
+            $row    = mysqli_fetch_assoc($result);
 
             if (isset($row["projeto_id"])){ //se há projetos passados, faz print dos projetos passados
                   ?>
@@ -225,7 +225,7 @@
                   </div>
 
                   <?php
-                  $row = pg_fetch_assoc($result);
+                  $row    = mysqli_fetch_assoc($result);
                 }
             }
                   ?>

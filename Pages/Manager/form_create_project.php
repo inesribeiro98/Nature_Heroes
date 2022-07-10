@@ -72,7 +72,7 @@
         if (!empty($_SESSION['requirements'])) 		 	$requirements = $_SESSION['requirements']; 			   		else $requirements = "";
         if (!empty($_SESSION['highlight1'])) 		   	$highlight1 = $_SESSION['highlight1']; 				      	else $highlight1 = "";
         if (!empty($_SESSION['highlight2'])) 		   	$highlight2 = $_SESSION['highlight2']; 				      	else $highlight2 = "";
-        if (!empty($_SESSION['highlight3'])) 		   	$highlight1 = $_SESSION['highlight3']; 				      	else $highlight3 = "";
+        if (!empty($_SESSION['highlight3'])) 		   	$highlight3 = $_SESSION['highlight3']; 				      	else $highlight3 = "";
         if (!empty($_SESSION['foto'])) 		         	$foto = $_SESSION['foto']; 				                  	else $foto = "";
 
         $_SESSION['nome_projeto']     = NULL;
@@ -91,7 +91,7 @@
 
     } elseif (isset($_GET["id_base"])) {
         $result=get_project_by_id($_GET["id_base"]);
-        $row=pg_fetch_assoc($result);
+        $row    = mysqli_fetch_assoc($result);
 
         $nome_projeto     = $row["nome_projeto"];
         $cidade_id        = $row["cidade_id"];
@@ -194,7 +194,7 @@
                     <option value="0">Select a city:</option>
                         <?php
                           $result = getAllCities();
-                          $row    = pg_fetch_assoc($result);
+                          $row    = mysqli_fetch_assoc($result);
 
                           while (isset($row["cidade_id"])){
                             echo "<option value=' " .$row["cidade_id"]. "'";
@@ -202,7 +202,7 @@
                               echo "selected";
                             }
                             echo  ">". $row['nome_cidade']. ", " .$row['pais']."</option>";
-                            $row=pg_fetch_assoc($result);
+                            $row    = mysqli_fetch_assoc($result);
                           }
                           ?>
                 </select>

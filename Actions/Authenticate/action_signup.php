@@ -5,7 +5,7 @@ include "../../Database/volunteer.php";
 
 //se carregar em Cancel//
 if (!empty($_POST['cancel'])) {
-  header("Location: ../../Pages/Common/index.php");
+  header("Location: ../../index.php");
 }
 
 //se carregar em submit//
@@ -58,7 +58,7 @@ if (!empty($_POST['submit'])) {
         create_volunteer($name,$email,$password,$phone_number,$nationality,$passport_number);
 
         $result = verify_login($email,$password);
-        $row    = pg_fetch_assoc($result);
+        $row    = mysqli_fetch_assoc($result);
 
     		$_SESSION["id"]   		= $row["voluntario_id"];
     		$_SESSION["nome"]			= $row["nome"];
@@ -68,7 +68,7 @@ if (!empty($_POST['submit'])) {
           		header("Location: ../../Pages/Volunteer/form_apply_to_project.php?id=".$_SESSION["origem_projeto"]);
   					}
             else {
-  					  header("Location: ../../Pages/Common/index.php");
+  					  header("Location: ../../index.php");
   					}
       }
   }

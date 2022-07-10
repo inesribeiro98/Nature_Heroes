@@ -29,8 +29,8 @@ if (!empty($_POST['submit'])) {
 
   //2 nao pode mudar o email para um que ja tenha outra conta associado//
     $result = check_email_edit($email);
-    $num_registos = pg_numrows($result);
-    $row=pg_fetch_assoc($result);
+    $num_registos = mysqli_num_rows($result);
+    $row    = mysqli_fetch_assoc($result);
 
     if(($num_registos>0) && ($row["voluntario_id"] <> $_SESSION["id"])){
       $erro="Email not valid.";

@@ -25,8 +25,8 @@
   </head>
 
   <ul class="nav">
-    <li class="logo" > <a href="../../Pages/Common/index.php" >  <img src="../../Images/Logo.png" alt="logo" style="width:50px;height:50px"> </a> </li>
-    <li class="nome" > <a href="../../Pages/Common/index.php" >  <h4>  Nature Heroes </h4> </a> </li>
+    <li class="logo" > <a href="../../index.php" >  <img src="../../Images/Logo.png" alt="logo" style="width:50px;height:50px"> </a> </li>
+    <li class="nome" > <a href="../../index.php" >  <h4>  Nature Heroes </h4> </a> </li>
     <li class="normal"> <a href="<?php echo $log;?>" > <h4> <img class="headicon" src="../../Images/Icons/social.png" alt="login" > <?php echo $mensagem;?> </h4>  </a> </li>
     <li class="normal"> <a href="../../Pages/Common/about.php" > <h4> <img class="headicon" src="../../Images/Icons/circle.png" alt="about" > About Us </h4>  </a> </li>
     <li class="normal">  <a href="../../Pages/Common/list_projects.php"> <h4>  <img class="headicon" src="../../Images/Icons/miscellaneous.png" alt="projects" >  Our Projects </h4> </a> </li>

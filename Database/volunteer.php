@@ -6,7 +6,7 @@ function create_volunteer($name,$email,$password,$phone_number,$nationality,$pas
   $query = "INSERT INTO voluntario (nome,email,password,telemovel,nacionalidade,bilhete_identidade)
             VALUES ('".$name."', '".$email."', '".$password."','".$phone_number."', '". $nationality."','".$passport_number."')";
 
-  pg_exec($conn, $query);
+  $result = mysqli_query($conn, $query);
 }
 
 
@@ -17,9 +17,9 @@ function check_email($email){
             FROM voluntario
             WHERE voluntario.email = '".$email."'";
 
-  $result = pg_exec($conn,$query);
+  $result = mysqli_query($conn, $query);
 
-  $num_registos = pg_numrows($result);
+  $num_registos = mysqli_num_rows($result);
 
   return $num_registos;
 }
@@ -32,7 +32,7 @@ function check_email_edit($email){
             FROM voluntario
             WHERE voluntario.email = '".$email."'";
 
-  $result = pg_exec($conn,$query);
+  $result = mysqli_query($conn, $query);
 
   return $result;
 }
@@ -45,7 +45,7 @@ function get_volunteer_info($volunteer_id){
             FROM voluntario
             WHERE voluntario_id = '".$volunteer_id."'";
 
-  $result = pg_exec($conn,$query);
+  $result = mysqli_query($conn, $query);
 
   return $result;
 }
@@ -59,7 +59,7 @@ function verify_login($email,$password){
             WHERE email='".$email."'
             AND password='".$password."'";
 
-  $result = pg_exec($conn, $query);
+  $result = mysqli_query($conn, $query);
 
   return $result;
 }
@@ -77,7 +77,7 @@ function edit_info($name,$email,$password,$phone_number,$country,$passport_numbe
                 nacionalidade ='".$country."'
             WHERE voluntario_id=".$_SESSION["id"] ;
 
-  pg_exec($conn, $query);
+  $result = mysqli_query($conn, $query);
 }
 
 
@@ -86,7 +86,8 @@ function get_all_volunteers($pais,$nome,$projects_yn){
 
   $query = "SELECT voluntario.voluntario_id, voluntario.nome, voluntario.email,voluntario.nacionalidade, voluntario.telemovel
             FROM voluntario
-            LEFT JOIN inscricao ON voluntario.voluntario_id = inscricao.voluntario_id";
+            LEFT JOIN inscricao ON voluntario.voluntario_id = inscricao.voluntario_id
+            WHERE voluntario.voluntario_id!=6";
 
   if ($projects_yn){
     $query.= " WHERE voluntario.voluntario_id=inscricao.voluntario_id";
@@ -102,7 +103,7 @@ function get_all_volunteers($pais,$nome,$projects_yn){
     $query.= " AND voluntario.nome='".$nome."'";
   }
 
-  $result = pg_exec($conn, $query);
+  $result = mysqli_query($conn, $query);
 
   return $result;
 }
@@ -116,7 +117,7 @@ function get_all_countries(){
           GROUP BY nacionalidade
           ORDER BY nacionalidade ASC";
 
-  $result = pg_exec($conn, $query);
+  $result = mysqli_query($conn, $query);
 
   return $result;
 }
@@ -131,8 +132,8 @@ function get_enrolled_projects($voluntario_id){
             AND inscricao.voluntario_id = '".$voluntario_id."'
             AND inscricao.projeto_id = projeto.projeto_id";
 
-  $result = pg_exec($conn, $query);
-  
+  $result = mysqli_query($conn, $query);
+
   return $result;
 }
 

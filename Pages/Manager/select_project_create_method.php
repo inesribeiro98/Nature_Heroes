@@ -110,7 +110,7 @@ if(isset($_GET["clean"])){
 
               <?php
               $result =  get_all_projects_manager2($pais,$nome_projeto);
-              $row    =  pg_fetch_assoc($result);
+              $row    = mysqli_fetch_assoc($result);
 
               while(isset($row['projeto_id']))
               {
@@ -121,7 +121,7 @@ if(isset($_GET["clean"])){
                 echo "<td>" . $data. "</td>";
                 echo "<td> <a href='form_create_project.php?id_base=".$row["projeto_id"]."'> Use as Baseline</td>";
 
-                $row  = pg_fetch_assoc($result);
+                $row    = mysqli_fetch_assoc($result);
               }
 
              ?>

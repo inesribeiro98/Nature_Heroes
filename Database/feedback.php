@@ -6,7 +6,7 @@ function create_feedback($testemunho, $projeto_id){
             (voluntario_id, projeto_id, testemunho)
             VALUES ('".$_SESSION["id"]."', '" .$projeto_id. "', '" .$testemunho."')";
 
-  pg_exec($conn, $query);
+  $result = mysqli_query($conn, $query);
 
 }
 
@@ -17,9 +17,9 @@ function search_feedback($projeto_id){ //pagina principal do voluntario
             WHERE voluntario_id='".$_SESSION["id"]."'
             AND projeto_id ='".$projeto_id."'";
 
-  $result=pg_exec($conn, $query);
+  $result = mysqli_query($conn, $query);
 
-  $num_registos = pg_numrows($result);
+  $num_registos = mysqli_num_rows($result);
 
   return $num_registos;
 }
@@ -35,7 +35,7 @@ function feedback_from_city($cidade_id){ //pagina info o projeto, para mostrar f
             WHERE cidade.cidade_id='".$cidade_id."'
             AND aprovado_yn='true'";
 
-  $result=pg_exec($conn, $query);
+  $result = mysqli_query($conn, $query);
 
   return $result;
 }
@@ -45,22 +45,22 @@ function feedbacks_to_approve(){ //procura todos os feedbacks para aprovar
 
   $query = "SELECT * FROM testemunho, projeto
             WHERE projeto.projeto_id= testemunho.projeto_id
-            AND aprovado_yn IS NULL";
+            AND aprovado_yn=''";
 
-  $result=pg_exec($conn, $query);
+  $result = mysqli_query($conn, $query);
 
   return $result;
 }
 
 function approve($projeto_id,$voluntario_id,$aceite){ //aprova/rejeita feedback
   global $conn;
-  
+
   $query = "UPDATE testemunho
           SET aprovado_yn='".$aceite."'
           WHERE voluntario_id='".$voluntario_id."'
           AND projeto_id='".$projeto_id."'";
 
-  pg_exec($conn, $query);
+  mysqli_query($conn, $query);
 }
 
 ?>

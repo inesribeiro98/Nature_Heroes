@@ -14,7 +14,7 @@
   }
 
     $result = get_project_by_id($projeto_id);
-    $row    = pg_fetch_assoc($result);
+    $row    = mysqli_fetch_assoc($result);
 
     $nome_projeto     = $row["nome_projeto"];
     $max_participantes= $row["max_participantes"];
@@ -216,7 +216,7 @@
             <h2 > Check out feedback for our projects in <?php echo $cidade;?></h2> <!-- feedbacks -->
             <?php
               $result = feedback_from_city($cidade_id);
-              $row    = pg_fetch_assoc($result);
+              $row    = mysqli_fetch_assoc($result);
               while(isset($row["testemunho"])){
 
                  ?>
@@ -231,7 +231,7 @@
                   </div>
                 </div>
               <?php
-                $row  = pg_fetch_assoc($result);
+                $row    = mysqli_fetch_assoc($result);
               }
                ?>
 

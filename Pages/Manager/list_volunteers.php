@@ -73,13 +73,13 @@
                   <option value="0" >Select a country:</option>
                   <?php
                   $result = get_all_countries();
-                  $row    = pg_fetch_assoc($result);
+                  $row    = mysqli_fetch_assoc($result);
 
                   while (isset($row["nacionalidade"])){?>
                     <option value="<?php echo $row['nacionalidade'];?>"<?php if ($pais==$row['nacionalidade']) echo "selected";?>><?php echo $row['nacionalidade'];?></option>
 
                   <?php
-                    $row  = pg_fetch_assoc($result);
+                    $row    = mysqli_fetch_assoc($result);
                   }
                     ?>
               </select>
@@ -110,7 +110,7 @@
               <?php
               //Display na tabela dos voluntarios que satisfazem os criterios do filtro
               $result =get_all_volunteers($pais, $nome, $projects_yn);
-              $row =  pg_fetch_assoc($result);
+              $row    = mysqli_fetch_assoc($result);
 
               while(isset($row['voluntario_id']))
               {
@@ -123,7 +123,7 @@
 
                 //Mostrar para cada voluntario em que projetos e que ele esta inscrito
                 $result2 = get_enrolled_projects($row['voluntario_id']);
-                $row2    = pg_fetch_assoc($result2);
+                $row2    = mysqli_fetch_assoc($result2);
 
                 if (!isset($row2["projeto_id"])){
                   echo "None";
@@ -131,14 +131,14 @@
                 else {
                     while(isset($row2["projeto_id"])){
                       echo $row2["nome_projeto"];
-                    $row2 = pg_fetch_assoc($result2);
+                    $row2    = mysqli_fetch_assoc($result2);
                       if(isset($row2["projeto_id"])){
                         echo "<br />";
                       }
                     }
                   }
                   echo "</td>";
-                  $row = pg_fetch_assoc($result);
+                  $row    = mysqli_fetch_assoc($result);
                 }
              ?>
 

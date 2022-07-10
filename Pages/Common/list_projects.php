@@ -94,7 +94,7 @@
 
       <?php
         $result = get_all_projects_filter($spot_yn, $pais, $data);
-        $row    = pg_fetch_assoc($result);
+        $row    = mysqli_fetch_assoc($result);
 
         if (!isset($row["projeto_id"])){
           echo "<p class=\"aviso\"> Unfortunately, we have no projects for the filters you selected! </p>";
@@ -137,7 +137,7 @@
               </div>
 
               <?php
-              $row = pg_fetch_assoc($result);
+              $row    = mysqli_fetch_assoc($result);
 
               /*Imagem à direita */
               if (isset($row["projeto_id"])){ /*verifica se existe valor */
@@ -174,7 +174,7 @@
               <?php
               }
 
-              $row = pg_fetch_assoc($result);
+              $row    = mysqli_fetch_assoc($result);
 
               if (isset($row["projeto_id"])){ /*só adiciona linha se houver um valor a seguir*/
                 echo "<hr />";

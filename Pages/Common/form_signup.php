@@ -151,7 +151,7 @@ $_SESSION['email']            = NULL;
           <input type="submit" name="submit" value="Submit!" class="signup">
         </form>
 
-        <img class="img_signup" src="../../Images/volunteer-workers.jpg">
+        <img class="img_signup" src="../../Images/volunteer-workers.JPG">
 
       </div>
 

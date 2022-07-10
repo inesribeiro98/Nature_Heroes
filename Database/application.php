@@ -6,7 +6,7 @@ function apply($voluntario_id, $projeto_id, $medical_history, $motivation, $diet
             (voluntario_id, projeto_id, medical_history, dieta, motivacao, comentario)
             VALUES ('".$voluntario_id."' , '" .$projeto_id. "', '" .$medical_history."', '".$diet."', '" .$motivation."', '" .$comment."')";
 
-  pg_exec($conn, $query);
+  mysqli_query($conn, $query);
 
   return $query;
 }
@@ -18,9 +18,9 @@ function volunteer_in_project($voluntario_id, $projeto_id){ //pagina info do pro
             WHERE voluntario_id = '".$voluntario_id."'
             AND projeto_id='".$projeto_id."'";
 
-  $result = pg_exec($conn,$query);
+  $result = mysqli_query($conn, $query);
 
-  $num_registos = pg_numrows($result);
+  $num_registos = mysqli_num_rows($result);
 
   return $num_registos;
 }
@@ -32,8 +32,8 @@ function get_application($voluntario_id, $projeto_id){
             WHERE voluntario_id = '".$voluntario_id."'
             AND projeto_id='".$projeto_id."'";
 
-  $result = pg_exec($conn,$query);
-  
+  $result = mysqli_query($conn, $query);
+
   return $result;
 }
 
@@ -49,7 +49,7 @@ function projects_of_volunteer($voluntario_id){ //projetos futuros do voluntári
             AND projeto.data_inicio>'".date('Y-m-d')."'
             ORDER BY data_inicio ASC";
 
-  $result = pg_exec($conn,$query);
+  $result = mysqli_query($conn, $query);
 
   return $result;
 }
@@ -65,7 +65,7 @@ function past_projects($voluntario_id){ //projetos passados do voluntário - vol
             AND projeto.data_inicio<='".date('Y-m-d')."'
             ORDER BY data_inicio DESC";
 
-  $result = pg_exec($conn,$query);
+  $result = mysqli_query($conn, $query);
 
   return $result;
 }
@@ -75,7 +75,7 @@ function cancel_application($voluntario_id,$projeto_id){
 
   $query = "DELETE FROM inscricao WHERE voluntario_id='".$voluntario_id."' AND projeto_id='".$projeto_id."'";
 
-  $result = pg_exec($conn,$query);
+  $result = mysqli_query($conn, $query);
 
   return $result;
 }
@@ -86,9 +86,9 @@ function numero_inscricoes_em_projeto($projeto_id){
   $query = "SELECT * FROM inscricao
             WHERE projeto_id = '".$projeto_id."'";
 
-  $result = pg_exec($conn,$query);
+  $result = mysqli_query($conn, $query);
 
-  $num_registos = pg_numrows($result);
+  $num_registos = mysqli_num_rows($result);
 
   return $num_registos;
 }

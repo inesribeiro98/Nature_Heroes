@@ -66,7 +66,7 @@
 
             <?php
             $result =  get_project_by_id($projeto_id);
-            $row    =  pg_fetch_assoc($result);
+            $row    = mysqli_fetch_assoc($result);
              ?>
             <h1> Volunteers enrolled in project:<br><?php echo $row['nome_projeto'] ?></h1>
             <br>
@@ -77,13 +77,13 @@
                   <option value="0" >Select a country:</option>
                   <?php
                   $result= get_all_countries();
-                  $row   = pg_fetch_assoc($result);
+                  $row    = mysqli_fetch_assoc($result);
 
                   while (isset($row["nacionalidade"])){?>
                     <option value="<?php echo $row['nacionalidade'];?>"<?php if ($pais==$row['nacionalidade']) echo "selected";?>><?php echo $row['nacionalidade'];?></option>
 
                   <?php
-                    $row = pg_fetch_assoc($result);
+                    $row    = mysqli_fetch_assoc($result);
                   }
                     ?>
               </select>
@@ -114,7 +114,7 @@
               <?php
               //Display na tabela dos voluntarios que estao inscritos naquele projeto
               $result =  get_volunteers_project($projeto_id, $pais, $nome);
-              $row    =  pg_fetch_assoc($result);
+              $row    = mysqli_fetch_assoc($result);
 
               while(isset($row['voluntario_id']))
               {
@@ -126,7 +126,7 @@
                 echo "<td> <a href= '../Volunteer/form_apply_to_project.php?id_proj=".$projeto_id."&id_vol=".$row['voluntario_id']."'> View application </a>";
                 echo "</td>";
 
-                $row  = pg_fetch_assoc($result);
+                $row    = mysqli_fetch_assoc($result);
                 }
              ?>
 

@@ -70,7 +70,7 @@ if (!empty($_SESSION['msg_erro'] )) {
     }
     else {
       $result = get_project_by_id($projeto_id);
-      $row    = pg_fetch_assoc($result);
+      $row    = mysqli_fetch_assoc($result);
 
       $nome_projeto       = $row["nome_projeto"];
       $cidade_id          = $row["cidade_id"];
@@ -145,7 +145,7 @@ if (!empty($_SESSION['msg_erro'] )) {
                     <option value="0">Select a city:</option>
                         <?php
                           $result = getAllCities();
-                          $row    = pg_fetch_assoc($result);
+                          $row    = mysqli_fetch_assoc($result);
 
                           while (isset($row["cidade_id"])){
                             echo "<option value=' " .$row["cidade_id"]. "'";
@@ -153,7 +153,7 @@ if (!empty($_SESSION['msg_erro'] )) {
                               echo "selected";
                             }
                             echo  ">". $row['nome_cidade']. ", " .$row['pais']."</option>";
-                            $row=pg_fetch_assoc($result);
+                            $row    = mysqli_fetch_assoc($result);
                           }
                           ?>
                 </select>

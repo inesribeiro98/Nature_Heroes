@@ -24,7 +24,7 @@ function get_all_projects_manager($spot_yn, $pais,$nome_projeto,$sort){ //pagina
 
   $query.= $sort;
 
-  $result =  pg_exec($conn, $query);
+  $result = mysqli_query($conn, $query);
 
   return $result;
   }
@@ -41,7 +41,7 @@ function edit_project($projeto_id, $max_participantes, $descricao,$highlight1, $
           highlight3 ='".$highlight3."'
           WHERE projeto_id='".$projeto_id."'";
 
-  pg_exec($conn, $query);
+  $result = mysqli_query($conn, $query);
 }
 
 
@@ -64,7 +64,7 @@ function get_all_projects_manager2($pais,$nome_projeto){ //pagina create project
 
   $query.= " ORDER BY cidade.cidade_id, nome_projeto ASC";
 
-  $result =  pg_exec($conn, $query);
+  $result = mysqli_query($conn, $query);
 
   return $result;
 }
@@ -89,7 +89,7 @@ function get_volunteers_project($projeto_id, $pais, $nome){
     $query.= " AND voluntario.nome='".$nome."'";
   }
 
-  $result = pg_exec($conn, $query);
+  $result = mysqli_query($conn, $query);
 
   return $result;
 }
@@ -115,7 +115,7 @@ function get_all_projects_filter($spot_yn, $pais, $data){ //pagina list projects
 
   $query.= " ORDER BY data_inicio";
 
-  $result = pg_exec($conn,$query);
+  $result = mysqli_query($conn, $query);
 
   return $result;
 }
@@ -132,7 +132,7 @@ function get_project_by_id($projeto_id){ //página info do projeto
           HAVING projeto.projeto_id='" .$projeto_id. "'
           ORDER BY projeto.data_inicio DESC";
 
-  $result = pg_exec($conn,$query);
+  $result = mysqli_query($conn, $query);
 
   return $result;
 }
@@ -144,7 +144,7 @@ function create_project($nome_projeto, $cidade_id, $data_inicio, $data_fim,  $ma
             (nome_projeto, cidade_id, data_inicio, data_fim, max_participantes, descricao, requirements, highlight1, highlight2, highlight3, foto)
             VALUES ('".$nome_projeto."' , '" .$cidade_id. "', '" .$data_inicio."', '".$data_fim."', '" .$max_participantes."', '" .$descricao."', '" .$requirements."','".$highlight1."','".$highlight2."', '".$highlight3."','".$foto."')";
 
-    pg_exec($conn, $query);
+    $result = mysqli_query($conn, $query);
 }
 
  ?>

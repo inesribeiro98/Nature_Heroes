@@ -6,7 +6,7 @@ function getAllCities(){
 
   $query = "SELECT * from cidade";
 
-  $result = pg_exec($conn,$query);
+  $result = mysqli_query($conn, $query);
 
   return $result;
 }

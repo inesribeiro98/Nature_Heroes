@@ -9,11 +9,11 @@
 
 	$result 			= verify_login($email, $password);
 
-	$num_registos = pg_numrows($result);
+	$num_registos = mysqli_num_rows($result);
 
 	if($num_registos>0){
-		
-		$row=pg_fetch_assoc($result);
+
+		$row    = mysqli_fetch_assoc($result);
 
 		$_SESSION["id"]   		= $row["voluntario_id"];
 		$_SESSION["nome"]			= $row["nome"];

@@ -48,7 +48,7 @@
           <br />
           <?php
           $result = feedbacks_to_approve();
-          $row    = pg_fetch_assoc($result);
+          $row    = mysqli_fetch_assoc($result);
 
           if (!isset($row["testemunho"])){
             echo "<p class=\"aviso\"> No new feedbacks to accept/reject. </p>";
@@ -75,7 +75,7 @@
               </div>
 
               <?php
-              $row = pg_fetch_assoc($result);
+              $row    = mysqli_fetch_assoc($result);
             }
           }
            ?>

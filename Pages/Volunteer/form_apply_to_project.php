@@ -27,7 +27,7 @@
     $origem        = "../../Pages/Manager/list_volunteers_in_project.php?id_proj=$projeto_id";
 
     $result = get_application($voluntario_id, $projeto_id);
-    $row    = pg_fetch_assoc($result);
+    $row    = mysqli_fetch_assoc($result);
 
     $medical_history = $row["medical_history"];
     $motivation      = $row["motivacao"];
@@ -41,7 +41,7 @@
     $origem          = "../../Pages/Volunteer/volunteer_main_page.php";
 
     $result = get_application($_SESSION["id"], $projeto_id);
-    $row    = pg_fetch_assoc($result);
+    $row    = mysqli_fetch_assoc($result);
 
     $medical_history = $row["medical_history"];
     $motivation      = $row["motivacao"];
@@ -56,7 +56,7 @@
   $_SESSION["origem_projeto"] = $projeto_id;
 
   $result = get_project_by_id($projeto_id);
-  $row    = pg_fetch_assoc($result);
+  $row    = mysqli_fetch_assoc($result);
 
   $nome_projeto     = $row["nome_projeto"];
   $data_inicio      = $row["data_inicio"];
