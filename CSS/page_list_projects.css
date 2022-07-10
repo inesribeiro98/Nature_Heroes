@@ -1,0 +1,161 @@
+/*CSS para páginas: List Projects  */
+
+p.vagas{
+	color:  red;
+	font-family: Bahnschrift SemiBold ;
+	font-size: 18px;
+	margin-top:26px;
+	margin-bottom: 0;
+  margin-left: 0;
+	margin-right: 0;
+	font-weight: bold;
+	text-align: right;
+	padding-left:380px;
+	display:inline-block;
+	}
+
+/*inputs*/
+input[type=date], select {
+	-webkit-transition: 0.3s;
+	transition: 0.3s;
+	outline: none;
+	background-color: white;
+	border: 1.5px solid rgb(56, 87, 35);
+	color:  black;
+	font-family: Calibri ;
+	font-size: 18px;
+	margin: 5px 20px;
+	margin-right:70px;
+	padding: 2px 15px;
+	border-radius: 0.2em;
+	}
+
+input[type=date]{
+	width:150px;
+	}
+
+input[type=submit]{
+	padding: 8px 32px;
+	float:left;
+	margin-left:0px;
+	margin-right:20px;
+	}
+
+/* Imagens Project*/
+img.esquerda {
+	float: left;
+	border-radius: 50%;
+	border-style: solid;
+	border: 2px solid rgb(56, 87, 35);
+	width: 75%;
+	height:auto;
+	transition: transform .2s;
+	}
+
+img.direita {
+	float: right;
+	border-radius: 50%;
+	border-style: solid;
+	border: 2px solid rgb(56, 87, 35);
+	width: 75%;
+	transition: transform .2s;
+	height:auto;
+	}
+
+img.direita:hover {
+  transform: scale(1.2);
+	}
+
+img.esquerda:hover {
+  transform: scale(1.2);
+	}
+
+/*zona verde clara*/
+.zona_verde {
+	padding-top:50px;
+	padding-bottom:100px;
+	justify-content: space-around;
+	text-align: left;
+	background-color: rgb(228, 240, 220);
+	padding-left:12%;
+	}
+
+/* Divisões usadas em Project (versão com imagem à esquerda) */
+.row:after {
+	content: "";
+	display: table;
+	clear: both;
+	}
+
+.columnleft {
+	float: left;
+	width: 30%;
+	padding-left:7%;
+	padding-bottom:3%;
+	}
+
+.columnleft2 {
+	padding-right: 7%;
+	padding-bottom:3%;
+	float: right;
+	width: 56%;
+	}
+
+/* Divisões usadas em Project (versão com imagem à direita) */
+.columnright{
+	width: 56%;
+	float: left;
+	padding-left:7%;
+	padding-bottom:3%;
+	}
+
+.columnright2 {
+	float: right;
+	width: 30%;
+	padding-right: 7%;
+	padding-bottom:3%;
+	}
+
+/*Button More info */
+.projetos {
+	background-color: white;
+	border: 2px solid rgb(56, 87, 35);
+	color: white;
+	font-size: 20px;
+	color:   rgb(56, 87, 35);
+	font-family: Bahnschrift SemiBold ;
+	padding: 5px 5px;
+	float:right;
+	margin-top:15px;
+	text-decoration: none;
+	display: block;
+	border-radius: 10px;
+	transition: all 0.5s;
+	cursor: pointer;
+	width: 150px;
+	}
+
+.projetos span {
+	cursor: pointer;
+	display: inline-block;
+	position: relative;
+	transition: 0.5s;
+	}
+
+.projetos span:after {
+	content: '\00bb';
+	position: absolute;
+	opacity: 0;
+	top: 0;
+	right: -20px;
+	transition: 0.5s;
+	}
+
+.projetos:hover span {
+	padding-right: 20px;
+	}
+
+.projetos:hover span:after {
+	opacity: 1;
+	right: 0;
+	}

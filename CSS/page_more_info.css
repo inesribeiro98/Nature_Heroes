@@ -1,0 +1,352 @@
+/*Button */
+button#apply {
+	background-color: rgb(56, 87, 35);
+	border: none;
+	color: white;
+	padding: 15px 32px;
+	text-decoration: none;
+	display: block;
+	border-radius: 10px;
+	transition: all 0.5s;
+	cursor: pointer;
+	width: 100%;
+	}
+
+button#apply:hover {
+	background-color: rgb(84, 130, 53);
+	}
+
+button#apply span {
+	cursor: pointer;
+	display: inline-block;
+	position: relative;
+	transition: 0.5s;
+	}
+
+button#apply span:after {
+	content: '\00bb';
+	position: absolute;
+	opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+  }
+
+button#apply:hover:enabled span {
+	padding-right: 20px;
+  }
+
+button#apply:hover:enabled span:after {
+  opacity: 1;
+  right: 0;
+  }
+
+button#apply:disabled {
+	background-color:rgb(69, 56, 34);
+	border-color: rgb(56, 87, 35);
+	cursor: not-allowed;
+	}
+
+button#apply:hover:disabled span {
+	cursor: not-allowed;
+	}
+
+button#apply:hover:disabled span:after {
+	cursor: not-allowed;
+	}
+
+/* Accordion */
+.accordion {
+	background-color: white;
+	cursor: pointer;
+	padding: 10px;
+	padding-left: 20px;
+	margin-top:20px;
+	width: 100%;
+	text-align: left;
+	border: none;
+	outline: none;
+	transition: 0.4s;
+	color:   rgb(56, 87, 35);
+	font-family: Bahnschrift SemiBold ;
+	font-size: 20px;
+	}
+
+.active, .accordion:hover {
+	background-color: rgb(69, 56, 34,0.1);
+	}
+
+.panel {
+	padding-left: 20px;
+	padding-right: 20px;
+	background-color: white;
+	max-height: 0;
+	overflow: hidden;
+	transition: max-height 0.2s ease-out;
+	}
+
+.accordion:after {
+	background-image:  url("../Images/Icons/more.png");
+	margin-left: 5px;
+	background-size: 20px 20px;
+	height: 20px;
+	float:right;
+	content:"";
+	margin-right:10px;
+	vertical-align: middle;
+	display:inline-block;
+  width: 20px;
+	}
+
+.active:after {
+	background-image:  url("../Images/Icons/less.png");
+	margin-left: 5px;
+	background-size: 20px 20px;
+	height: 20px;
+	float:right;
+	content:"";
+	margin-right:10px;
+	vertical-align: middle;
+	display:inline-block;
+  width: 20px;
+	}
+
+img.acc { /*Imagens dentro do accordion*/
+  height: auto;
+	float:right;
+	margin-right:10px;
+	vertical-align: middle;
+	display:inline;
+	margin-top: 15px;
+	margin-left:15px;
+  width: 250px;
+	}
+
+/*sticky zone */
+.containerright {
+	position: -webkit-sticky;
+	position: sticky;
+	float:right;
+	top:30px;
+	width: 20%;
+	margin-right: 6%;
+	padding-top: 9px;
+	padding-bottom: 9px;
+	background-color:white;
+	padding-left:15px;
+	padding-right:15px;
+	border-radius: 10px;
+	}
+
+/*Highlights */
+.highlights{
+	border: 2px solid rgb(56, 87, 35);
+	margin-top: 20px;
+	border-radius: 10px;
+	}
+
+ul.high {
+	margin: 0;
+	padding:0 ;
+	padding-bottom: 7px;
+	padding-top: 3px;
+	}
+
+li.high{
+	list-style: none;
+	float:initial;
+	justify-content: center;
+  text-align: center;
+	padding-right: 15px;
+	padding-left: 20px;
+	margin-left: 10px;
+	margin-bottom: 10px;
+	margin-top: 10px;
+	list-style: none;
+	background-image: url("../Images/Icons/tick.png");
+	background-repeat: no-repeat;
+	background-position: 0% 12%;
+	background-size: 10px;
+	}
+
+a.disabled {
+  pointer-events: none;
+  background-color: rgb(56, 87, 35);
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-decoration: none;
+  display: block;
+  border-radius: 10px;
+  transition: all 0.5s;
+  cursor: pointer;
+  }
+
+/*zona à esquerda */
+.area {
+	width: 63%;
+	padding-left:7%;
+	padding-right:15px;
+	}
+
+li.act{
+	list-style:none;
+	background-image: url("../Images/Icons/pine.png");
+	float:initial;
+	justify-content: center;
+  text-align: center;
+	padding-right: 15px;
+	padding-left: 20px;
+	margin-left: 10px;
+	margin-bottom: 10px;
+	margin-top: 10px;
+	background-repeat: no-repeat;
+	background-position: 0% 20%;
+	background-size: 14px;
+	}
+
+.flex-container2 {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+  text-align: center;
+	padding-top: 0px;
+	padding-bottom: 10x;
+	}
+
+.flex-container2 > div {
+	text-align: center;
+	width: 100px;
+	margin: 7.5px;
+	}
+
+.feedbacks{
+  margin-top:20px;
+  background-color:  rgb(69, 56, 34, 0.1);
+  border-radius: 30px;
+  margin-left:5%;
+  width:90%;
+  height:200px;
+  display: table;
+	clear: both;
+	}
+
+img.img_feedback {
+	float: left;
+	border-radius: 50%;
+	border-style: solid;
+	border: 2px solid rgb(56, 87, 35);
+	width: 100%;
+	height:auto;
+	transition: transform .2s;
+	}
+
+.feedback_foto{
+  margin-top:20px;
+  margin-left:20px;
+  width:15%;
+  float:left;
+	}
+
+.feedback_texto{
+  margin-top:20px;
+  margin-left:20px;
+  margin-right:20px;
+  width:76%;
+  float:right;
+	}
+
+.mySlides {
+  display: none
+	}
+
+img.slide{
+  vertical-align: middle;
+  max-height: 500px;
+  max-width: 770px;
+	}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 770px;
+  margin-top:30px;
+  max-height: 500px;
+  position: relative;
+  margin: auto;
+  box-sizing: border-box
+	}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+	}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+	}
+
+/* Position the "next button" to the right */
+.prev {
+  left: 0;
+  border-radius: 3px 0 0 3px;
+	}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+	}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+  background-image:none;
+	}
+
+.activo, .dot:hover {
+  background-color: #717171;
+  background-image:none;
+	}
+
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+	}
+
+@-webkit-keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+	}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+	}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .prev, .next,.text {font-size: 11px}
+	}

@@ -1,0 +1,459 @@
+/* Estilos páginas do gerente e página principal do voluntário*/
+
+hr#vol{
+  width:100%;
+  margin-top:50px;
+}
+
+/* tipos de letra */
+#the-count p{
+  float: right;
+  margin-top:-4px;
+  margin-bottom:7px;
+  padding: 0.1rem 0 0 0;
+  font-size: 0.875rem;
+  }
+
+a.nav_gerente{
+  color:rgb(56, 87, 35);
+  font-weight: bold;
+  margin-top: 3px;
+  text-align: center;
+  font-family: Bahnschrift SemiBold ;
+	font-size: 22px;
+  text-decoration: none;
+  }
+
+a.nav_gerente:hover,
+a.more_info:hover,
+a.verde_grande:hover,
+a.verde_grande_link:hover {
+	color: rgb(84, 130, 53);
+  text-decoration:underline;
+	}
+
+a.more_info {
+  color:rgb(56, 87, 35);
+  font-weight: bold;
+  margin-top: 3px;
+  float:left;
+  font-family: Bahnschrift SemiBold ;
+  font-size: 18px;
+  font-weight: bold;
+  text-decoration:none;
+  }
+
+a.verde_grande_link{
+  color:rgb(56, 87, 35);
+  font-weight: bold;
+  margin-top: 3px;
+  font-family: Bahnschrift SemiBold ;
+  font-size: 24px;
+  font-weight: bold;
+  margin-left:20px;
+  text-decoration:underline;
+  }
+
+p.verde_grande_texto{
+  color:rgb(56, 87, 35);
+  font-weight: bold;
+  margin-top: 3px;
+  font-family: Bahnschrift SemiBold ;
+  font-size: 24px;
+  margin-left:20px;
+  font-weight: bold;
+  text-decoration:none;
+  display:inline;
+  }
+
+
+/*inputs e botoes*/
+input[type=date].branco,
+select.branco,
+input[type="text"].branco {
+	-webkit-transition: 0.3s;
+	transition: 0.3s;
+	outline: none;
+	background-color: white;
+	border: 1.5px solid rgb(56, 87, 35);
+	color:  black;
+	font-family: Calibri ;
+	font-size: 18px;
+	margin: 5px 20px;
+	margin-right:50px;
+	padding: 2px 15px;
+	border-radius: 0.2em;
+	}
+
+button.accept{
+	height: 50px;
+  width: 50px;
+	margin:10px;
+	float:right;
+  background-color:rgb(69, 56, 34, 0.1);
+  border:none;
+  background-image: url('../Images/Icons/check.png');
+  background-size: cover;
+  border-radius: 50%;
+  margin-left:20px;
+  }
+
+button.reject{
+	height: 50px;
+  width: 50px;
+	margin:10px;
+	float:right;
+  background-color:rgb(69, 56, 34, 0.1);
+  border:none;
+  background-image: url('../Images/Icons/cross.png');
+  background-size: cover;
+  border-radius: 50%;
+  }
+
+button.reject:hover,
+button.accept:hover{
+	opacity: 0.5;
+  }
+
+input[type=text]#create_project1,
+select#create_project2 {
+	width:300px;
+	}
+
+input[type=text].create_project3{
+  width:712px;
+  }
+
+input[type="text"].vol_edit:disabled,
+input[type="email"].vol_edit:disabled,
+input[type="password"].vol_edit:disabled{
+  border: rgb(228, 240, 220);
+	background-color: rgb(228, 240, 220);
+  }
+
+input[type="text"].vol_edit,
+input[type="email"].vol_edit,
+input[type="password"].vol_edit{
+  background-color: rgb(206, 186, 154);
+	border: 1.5px solid rgb(206, 186, 154);
+  width:200px;
+  margin-top:0px;
+  }
+
+Input[type="submit"]#submit,
+.button_esq {
+  float:right;
+  width:150px;
+  background-color: rgb(56, 87, 35);
+  border: none;
+  color: white;
+  padding: 10px 32px;
+  text-decoration: none;
+  display: inline;
+  border-radius: 10px;
+  transition: all 0.5s;
+  cursor: pointer;
+  font-family: Bahnschrift SemiBold ;
+  font-size: 20px;
+  text-align: center;
+  margin-top:20px;
+  margin-left:30px;
+  border-radius: 10px;
+  margin-right:30px;
+	}
+
+input[type=submit].fino{
+	padding: 8px 32px;
+	float:left;
+	margin-left:0px;
+	margin-right:20px;
+  }
+
+.button_esq{
+  width:85px;
+  }
+
+Input[type="submit"]#submit:hover,
+.button_esq:hover {
+  background-color: rgb(84, 130, 53);
+  }
+
+button#blocked {
+  background-color: white;
+  border: 2px solid rgb(56, 87, 35);
+  color: white;
+  font-size: 20px;
+  color:   rgb(56, 87, 35);
+  font-family: Bahnschrift SemiBold ;
+  padding: 10px 5px;
+  float:right;
+  margin-top:15px;
+  text-decoration: none;
+  display: block;
+  border-radius: 10px;
+  transition: all 0.5s;
+  cursor: not-allowed;
+  width: 383px;
+  text-align:center;
+  margin-right:15px;
+  }
+
+.button_vol {
+	background-color: white;
+	border: 2px solid rgb(56, 87, 35);
+	color: white;
+	font-size: 20px;
+	color:   rgb(56, 87, 35);
+	font-family: Bahnschrift SemiBold ;
+	padding: 10px 5px;
+	float:right;
+	margin-top:15px;
+	text-decoration: none;
+	display: block;
+	border-radius: 10px;
+	transition: all 0.5s;
+	cursor: pointer;
+	width: 170px;
+  text-align:center;
+  margin-right:15px;
+	}
+
+.button_vol#grande {
+	width: 370px;
+  }
+
+.button_vol#verde {
+  width: 370px;
+  background-color: rgb(56, 87, 35);
+  border: none;
+  color: white;
+  font-size: 20px;
+  font-family: Bahnschrift SemiBold ;
+  }
+
+.button_vol span {
+	cursor: pointer;
+	display: inline-block;
+	position: relative;
+	transition: 0.5s;
+	}
+
+.button_vol span:after {
+	content: '\00bb';
+	position: absolute;
+	opacity: 0;
+	top: 0;
+	right: -20px;
+	transition: 0.5s;
+	}
+
+.button_vol:hover span {
+	padding-right: 20px;
+	}
+
+.button_vol:hover span:after {
+	opacity: 1;
+	right: 0;
+	}
+
+
+/* imagens */
+img.numeros{
+  width:50px;
+  height:50px;
+  margin-left:50px;
+  }
+
+img.proj{
+  width:250px;
+  margin-top:30px;
+  display: inline-block;
+  border: 2px solid rgb(56, 87, 35);
+  }
+
+
+/*outras divs*/
+.feedbacks{
+  margin-top:20px;
+  background-color:  rgb(69, 56, 34, 0.1);
+  border-radius: 30px;
+  margin-left:30px;
+  margin-right:80px;
+  height:150px;
+  padding:30px;
+  display: table;
+	clear: both;
+  width:800px;
+  }
+
+.sidenav {
+  height: 95%;
+  width: 20%;
+  position: absolute;
+  top:62px;
+  background-color: rgb(228, 240, 220);
+  overflow-x: hidden;
+  text-align:center;
+  padding-top: 20px;
+  padding-left:25px;
+  padding-right:25px;
+  }
+
+.bigbox {
+  background-color:  white;
+  background-size: auto;
+  background-position: center;
+  overflow:visible;
+  min-height:760px;
+  }
+
+.rightside {
+  background-color:  white;
+  justify-content: right;
+  background-size: auto;
+  padding-left:25%;
+  padding-top: 20px;
+  margin-right:30px;
+  margin-left:30px;
+  min-height: 460px;
+  padding-bottom: 140px;
+  }
+
+.voluntario_esquerdo{
+  display: inline-block;
+  width: 280px;
+  vertical-align:top;
+  padding-left:100px;
+  }
+
+.voluntario_direito{
+  display: inline-block;
+  padding-top:25px;
+  }
+
+.row:after {
+	content: "";
+	display: inline;
+	}
+
+
+.right {
+	float: right;
+	}
+
+.left {
+	float: left;
+	width: 60%;
+	}
+
+.left_data {
+	float: left;
+	width: 50%;
+	}
+
+.form-popup {
+  display: none;
+  border: 3px solid rgb(69, 56, 34);
+  z-index: 9;
+  margin: 0 auto;
+  position: fixed;
+  top:35%;
+  left:50%;
+  }
+
+.form-container {
+  max-width: 600px;
+  padding: 10px;
+  background-color: white;
+  }
+
+.form-container .btn {
+  background-color: rgb(56, 87, 35);
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom:10px;
+  font-size: 20px;
+  font-family: Bahnschrift SemiBold ;
+  }
+
+.form-container .btn:hover {
+  background-color: rgb(84, 130, 53);
+  }
+
+.form-container .cancel {
+  background-color: #ba2d23;
+  }
+
+.form-container .cancel:hover {
+  background-color: #d1463d;
+  }
+
+.form-container textarea#testemunho {
+  width:567px;
+  height:150px;
+  }
+
+
+/*tabelas */
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-top:30px;
+  }
+
+th,
+th a {
+  text-align: center;
+  color: rgb(56, 87, 35);
+  font-family: Calibri;
+  font-size: 18px;
+  margin-top: 9px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
+  font-weight: bold;
+  padding: 8px;
+  text-decoration:none;
+  }
+
+th a:hover{
+  color:rgb(84, 130, 53);
+  }
+
+td {
+  text-align: center;
+  color: black;
+  font-family: Calibri;
+  font-size: 18px;
+  margin-top: 9px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
+  font-weight: normal;
+  padding: 8px;
+  }
+
+td a {
+  text-align: center;
+  color: black;
+  font-family: Calibri;
+  font-size: 18px;
+  margin-top: 9px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
+  font-weight: bold;
+  text-decoration: :underline;
+  padding: 8px;
+  }
+
+td a:hover {
+  color: grey;
+  }
+
+tr:nth-child(even) {
+  background-color: rgb(206, 186, 154);
+  }
